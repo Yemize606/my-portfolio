@@ -52,3 +52,8 @@ Since this handles real student health and appointment data, security wasn't an 
 
 ## What I'd build next
 what i would be intreasted in build will be a ai system that tracks and logs threat attack and colaborates with an ai engine on how to build the systems defense against such attacks automatically with just a single permission for the user it it just an idea for now i havent gotten the basics down yet if you have any advice to give or reviews or opions please do im still learning  
+## Database
+
+The full schema (tables, relationships, and analytics views) is available in
+[`database/lasu_health_center_scrubbed_v3.sql`](database/lasu_health_center_scrubbed.sql).
+Seed data has been scrubbed of real personal information.
