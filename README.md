@@ -55,5 +55,5 @@ what i would be intreasted in build will be a ai system that tracks and logs thr
 ## Database
 
 The full schema (tables, relationships, and analytics views) is available in
-[`database/lasu_health_center_scrubbed_v3.sql`](database/lasu_health_center_scrubbed.sql).
+[`database/lasu_health_center_scrubbed.sql`](database/lasu_health_center_scrubbed.sql).
 Seed data has been scrubbed of real personal information.
