@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>LASU Health Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-deep:  #0D3B2E;
+    --gold:        #C8922A;
+    --gold-light:  #E8B45A;
+    --cream:       #FAF8F3;
+    --white:       #FFFFFF;
+    --text-dark:   #0D1F19;
+    --text-muted:  #7A9589;
+  }
+
+  html, body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+  }
+
+  /* ── Hero ── */
+  .panel-left {
+    background: var(--green-deep);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 48px 52px;
+    overflow: hidden;
+    min-height: 360px;
+  }
+  .panel-left::before {
+    content:'';position:absolute;width:420px;height:420px;border-radius:50%;
+    border:1px solid rgba(255,255,255,0.06);top:-140px;right:-140px;
+  }
+  .panel-left::after {
+    content:'';position:absolute;width:280px;height:280px;border-radius:50%;
+    border:1px solid rgba(255,255,255,0.06);bottom:-80px;left:-80px;
+  }
+
+  .brand { position: relative; z-index: 1; }
+  .brand-mark {
+    width:48px;height:48px;background:var(--gold);border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:20px;font-size:24px;font-weight:700;color:var(--green-deep);
+  }
+  .brand-name {
+    font-family:'Fraunces',serif;font-size:13px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--gold-light);margin-bottom:6px;
+  }
+  .brand-title {
+    font-family:'Fraunces',serif;font-size:36px;font-weight:600;
+    color:var(--white);line-height:1.2;margin-bottom:16px;
+  }
+  .tagline { border-left:2px solid var(--gold);padding-left:20px;position:relative;z-index:1;margin-bottom:32px; }
+  .tagline-text { font-family:'Fraunces',serif;font-size:18px;font-style:italic;color:rgba(255,255,255,.85);line-height:1.5;margin-bottom:6px; }
+  .tagline-sub  { font-size:13px;color:rgba(255,255,255,.45);letter-spacing:.04em; }
+
+  .btn-group {
+    display:flex;gap:10px;
+    position:absolute;top:48px;right:52px;z-index:2;
+  }
+  .btn-link {
+    display:inline-flex;align-items:center;justify-content:center;
+    height:44px;padding:0 22px;background:var(--white);color:var(--green-deep);
+    text-decoration:none;border-radius:10px;font-size:14px;font-weight:600;
+    border:1px solid rgba(255,255,255,.3);transition:all .2s;
+  }
+  .btn-link:hover { background:var(--gold);color:var(--green-deep);border-color:var(--gold); }
+  .btn-secondary { background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.5); }
+  .btn-secondary:hover { background:rgba(255,255,255,.15);color:var(--white);border-color:var(--white); }
+
+  .panel-footer { position:relative;z-index:1; }
+  .stats { display:flex;gap:40px; }
+  .stat-value { font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--white); }
+  .stat-label  { font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.06em;text-transform:uppercase;margin-top:2px; }
+
+  /* ── Gallery section ── */
+  .section-title {
+    text-align:center;padding:40px 40px 20px;
+    font-family:'Fraunces',serif;font-size:22px;color:var(--text-dark);
+  }
+
+  /* ── Clean 3×2 uniform grid ── */
+  .box-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-rows: repeat(2, 1fr);    /* 2 equal rows */
+    gap: 20px;
+    padding: 0 40px 40px;
+  }
+
+  .box {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,.07);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .box:hover { transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.12); }
+
+  /* ALL images same fixed height — this is the key to uniformity */
+  .box img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .box p {
+    padding:12px 14px;font-size:13px;
+    color:var(--text-muted);text-align:center;font-weight:500;
+  }
+
+  /* ── Footer ── */
+  .site-footer { background:var(--green-deep);color:white;margin-top:20px;padding-top:40px; }
+  .footer-container { display:grid;grid-template-columns:repeat(3,1fr);gap:30px;padding:0 52px; }
+  .footer-box h3 { margin-bottom:12px;font-size:15px;font-weight:600;color:var(--gold-light); }
+  .footer-box p  { font-size:13px;opacity:.8;line-height:1.7; }
+  .footer-box a  { display:block;color:white;text-decoration:none;font-size:13px;margin-bottom:8px;opacity:.75;transition:opacity .2s; }
+  .footer-box a:hover { opacity:1;text-decoration:underline; }
+  .footer-bottom { text-align:center;padding:16px;margin-top:32px;font-size:12px;border-top:1px solid rgba(255,255,255,.15);opacity:.7; }
+
+  /* ── Responsive ── */
+  @media (max-width:900px) {
+    .box-grid { grid-template-columns:1fr 1fr;padding:0 20px 32px; }
+    .footer-container { grid-template-columns:1fr;padding:0 24px; }
+    .panel-left { padding:32px 24px; }
+    .btn-group  { top:32px;right:24px; }
+  }
+  @media (max-width:560px) {
+    .box-grid { grid-template-columns:1fr; }
+    .stats { gap:24px; }
+    .brand-title { font-size:26px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Hero ── -->
+<aside class="panel-left">
+  <div class="brand">
+    <div class="brand-mark">+</div>
+    <div class="brand-name">Lagos State University</div>
+    <div class="brand-title">Student Health<br>Center</div>
+  </div>
+  <div class="tagline">
+    <p class="tagline-text">"Your health is the foundation of your success."</p>
+    <p class="tagline-sub">LASU Health Services Division</p>
+  </div>
+  <div class="btn-group">
+    <a href="signup.php" class="btn-link btn-secondary">Sign up</a>
+    <a href="login.php"  class="btn-link">Sign in</a>
+  </div>
+  <div class="panel-footer">
+    <div class="stats">
+      <div><div class="stat-value">24/7</div><div class="stat-label">Emergency line</div></div>
+      <div><div class="stat-value">6</div><div class="stat-label">Departments</div></div>
+      <div><div class="stat-value">40k+</div><div class="stat-label">Students served</div></div>
+    </div>
+  </div>
+</aside>
+
+<!-- ── Gallery ── -->
+<p class="section-title">Our Services &amp; Facilities</p>
+
+<main class="box-grid">
+
+  <!-- Row 1 -->
+  <div class="box">
+    <img src="image/blood.jpg" alt="Blood collection"/>
+    <p>Blood collection</p>
+  </div>
+
+  <div class="box">
+    <img src="image/urine.jpg" alt="Urine analysis"/>
+    <p>Urine analysis</p>
+  </div>
+
+  <div class="box">
+    <img src="image/recpetion.jpg" alt="Reception desk"/>
+    <p>Reception &amp; registration desk</p>
+  </div>
+
+  <!-- Row 2 -->
+  <div class="box">
+    <img src="image/waiting.jpg" alt="Waiting area"/>
+    <p>Patient waiting area</p>
+  </div>
+
+  <div class="box">
+    <img src="image/health.jpg" alt="Health consultation"/>
+    <p>Health consultation</p>
+  </div>
+
+  <div class="box">
+    <img src="image/dental.jpg" alt="Dental services"/>
+    <p>Dental services</p>
+  </div>
+
+</main>
+
+<!-- ── Footer ── -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-box">
+      <h3>About LASU Health Center</h3>
+      <p>The LASU Health Center provides quality healthcare services to students and staff, ensuring a safe, healthy, and supportive academic environment.</p>
+    </div>
+    <div class="footer-box">
+      <h3>Contact Us</h3>
+      <p>Email: healthcenter@lasu.edu.ng</p>
+      <p>Phone: +234 800 000 0000</p>
+      <p>Location: Lagos State University, Ojo Campus</p>
+    </div>
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <a href="fullat.html">Home</a>
+      <a href="login.php">Login</a>
+      <a href="signup.php">Sign Up</a>
+      <a href="login.php">Book Appointment</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 LASU Health Center. All Rights Reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+services:
+  # ── The website itself ──────────────────────────────────────
+  - type: web
+    name: lasu-health-center
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASS
+        sync: false
+      - key: GMAIL_ADDRESS
+        sync: false
+      - key: GMAIL_APP_PASSWORD
+        sync: false
+      - key: SENDER_NAME
+        value: "LASU Health Center"
+      - key: TERMII_API_KEY
+        sync: false
+      - key: TERMII_SENDER_ID
+        value: "LASUHealth"
+
+  # ── Scheduled reminder / follow-up emails ───────────────────
+  # Render runs this automatically on the schedule below.
+  # Nobody has to open a terminal — this replaces Windows Task Scheduler.
+  - type: cron
+    name: lasu-notification-processor
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    schedule: "0 * * * *"   # every hour, on the hour
+    dockerCommand: php /var/www/html/notify/process_notifications.php
+    envVars:
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASS
+        sync: false
+      - key: GMAIL_ADDRESS
+        sync: false
+      - key: GMAIL_APP_PASSWORD
+        sync: false
+      - key: SENDER_NAME
+        value: "LASU Health Center"
+      - key: TERMII_API_KEY
+        sync: false
+      - key: TERMII_SENDER_ID
+        value: "LASUHealth"
