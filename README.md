@@ -41,9 +41,14 @@ Since this handles real student health and appointment data, security wasn't an 
 - Database hosted on Aiven's managed MySQL.
 
 ## Screenshots
+<img width="1366" height="768" alt="Screenshot 2026-04-22 101932" src="https://github.com/user-attachments/assets/2f501052-1105-4682-b96d-19a059391c8a" />
+<img width="1920" height="1080" alt="Showing the User Management Page in the Administrator Panel " src="https://github.com/user-attachments/assets/6da018c1-593e-4f40-b14b-6be8a336022e" />
+<img width="1920" height="1080" alt="doctor solt management" src="https://github.com/user-attachments/assets/ee690dd8-3276-4cd6-bb10-ce10041d2b1e" />
+<img width="1920" height="1080" alt="booking page" src="https://github.com/user-attachments/assets/ffbcaa21-f7c6-440c-b812-2ab1c842faa2" />
+<img width="1920" height="1080" alt="the Consultation and Diagnosis" src="https://github.com/user-attachments/assets/20cef267-36d2-49e4-b200-1969ce3085f9" />
+<img width="1920" height="1080" alt="registeration page" src="https://github.com/user-attachments/assets/14dc1034-a1ab-4fbd-8f24-4b87e75dd762" />
 
-_Add a few screenshots here of the student, doctor, and admin dashboards._
+
 
 ## What I'd build next
-
-_A short, honest line or two — e.g. "Rate limiting on the signup endpoint, 2FA for admin accounts, migrating email delivery to a dedicated transactional email API." Reviewers respond well to a candid, specific list here — it shows you know what "more" looks like, not just what you already did._
+what i would be intreasted in build will be a ai system that tracks and logs threat attack and colaborates with an ai engine on how to build the systems defense against such attacks automatically with just a single permission for the user it it just an idea for now i havent gotten the basics down yet if you have any advice to give or reviews or opions please do im still learning  
